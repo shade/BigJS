@@ -95,7 +95,7 @@ BI.prototype.rs = function(k){
   }
 
   //We start from 0 because everything below has been shifted out
-  for(var i = 0,ii = this.size;i <ii;i++){
+  for(var i = 0,ii = this.size - 1;i < ii;i++){
     if(i == ii){
 
     }
@@ -146,6 +146,34 @@ BI.prototype.XOR = function(num){
   return this;
 }
 
+BI.prototype.NOT = function() {
+  //Flip all the bits
+  for(var i = 0,ii = this.size-1;i <= ii;i++){
+    //If we flip all the bits in the last column we get a new number
+    if(i == ii){
+      this.n[i] = (~this.n[i] << (CHUNK_SIZE - this.lB)) & AND_MASK;
+      break;
+    }
+
+    //We only need the last bits
+    this.n[i] = ~this.n[i] & INV_AND_MASK;
+
+  }
+};
+
+
+BI.prototype.digest = function(){
+  //The digest string
+  var dString = "";
+
+  //Append all the chunks
+  for(var i = 0;i < this.size;i++){
+    var num = this.n[i].toString(2);
+    dString += "0".repeat(CHUNK_SIZE).substr(num.length) + num;
+  }
+
+  return dString;
+}
 
 //Performs a bitwise AND on 2 big integers
 BI.prototype.valueOf = function(){
