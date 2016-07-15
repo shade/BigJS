@@ -110,8 +110,11 @@ BI.prototype.rs = function(k){
 //Performs a bitwise OR on 2 big integers
 BI.prototype.OR = function(num){
 
-  if(BI.lt(num)){
-    
+  // We only need to OR the smallest number of chunks
+  var ii = (BI.lt(num)? this.size : num.size); 
+
+  for(var i = 0;i < ii;i++){
+    this.n[i] |= num.n[i];
   }
 
   return this;
