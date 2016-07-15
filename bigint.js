@@ -38,9 +38,18 @@ function BI(number,base){
 
 
 
+
+
 BI.prototype.add = function(num){
   var carry = 0;
+  var ii = (BI.lt(num)? this.size : num.size);
+  for(var i = 0;i < ii;i++){
+    this.n[i] += (num.n[i] + carry);
+    carry = num[i] >> CHUNK_SIZE;
+    this.n[i] &= AND_MASK; 
+  }
 
+  return this;
 }
 
 BI.prototype.ls = function(k){
