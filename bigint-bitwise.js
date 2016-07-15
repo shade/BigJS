@@ -36,6 +36,7 @@ BI.prototype.lshift = function(x,me){
       if((_bi.lB + rem.toString(2).length) > CHUNK_SIZE){
         _bi.n.push(0);
         _bi.n[i + 1] = rem;
+        _bi.lB = rem.toString(2).length;
       }else{
         _bi.lB += rem;
       }
