@@ -35,10 +35,17 @@ var INV_AND_MASK = AND_MASK << CHUNK_SIZE;
 function BI(num,base){
   if(num instanceof BI){
     // Copy the big int
+    this.n = num.n.slice(0);
+    this.lB = num.lB;
+    return this;
   }
+
   switch(typeof num){
     case 'string':
-
+	    var arr = num.split(''),_b,b = "";
+    	while((_b = arr.shift())){
+	    	b += parseInt(num,base).toString(2);	
+    	}
     break;
     case 'number':
 
