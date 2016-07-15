@@ -10,4 +10,7 @@ BI.prototype.lshift = function(x,me){
 	//If me is set, do the operation on the current Big Integer, else make a new one
 	var b = me ? this : new BigInt(this);
 
+
+
+	
 }
