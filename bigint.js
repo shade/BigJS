@@ -55,6 +55,8 @@ BI.prototype.ls = function(k){
     this.n.unshift(0);
   }
 
+  this.size += chunks;
+
   var carry = 0, nCarry = 0;
   //Shift in everything else
 
@@ -93,6 +95,8 @@ BI.prototype.rs = function(k){
   for(var i = 0;i < chunks;i++){
     this.n.shift();
   }
+
+  this.size -= chunks;
 
   //We start from 0 because everything below has been shifted out
   for(var i = 0,ii = this.size - 1;i < ii;i++){
@@ -159,8 +163,8 @@ BI.prototype.NOT = function() {
     this.n[i] = ~this.n[i] & INV_AND_MASK;
 
   }
-};
-
+  return this;
+}
 
 BI.prototype.digest = function(){
   //The digest string
@@ -169,7 +173,7 @@ BI.prototype.digest = function(){
   //Append all the chunks
   for(var i = 0;i < this.size;i++){
     var num = this.n[i].toString(2);
-    dString += "0".repeat(CHUNK_SIZE).substr(num.length) + num;
+    dString = ("0".repeat(CHUNK_SIZE).substr(num.length) + num) + dString;
   }
 
   return dString;
