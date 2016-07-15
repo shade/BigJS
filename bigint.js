@@ -120,6 +120,34 @@ BI.prototype.OR = function(num){
   return this;
 }
 
+//Performs a bitwise AND on 2 big integers
+BI.prototype.AND = function(num){
+
+  // We only need to OR the smallest number of chunks
+  var ii = (BI.lt(num)? this.size : num.size); 
+
+  for(var i = 0;i < ii;i++){
+    this.n[i] &= num.n[i];
+  }
+
+  return this;
+}
+
+//Performs a bitwise XOR on 2 big integers
+BI.prototype.XOR = function(num){
+
+  // We only need to OR the smallest number of chunks
+  var ii = (BI.lt(num)? this.size : num.size); 
+
+  for(var i = 0;i < ii;i++){
+    this.n[i] ^= num.n[i];
+  }
+
+  return this;
+}
+
+
+//Performs a bitwise AND on 2 big integers
 BI.prototype.valueOf = function(){
   
 }
