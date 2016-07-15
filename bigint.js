@@ -15,8 +15,8 @@ var INV_AND_MASK = ~AND_MASK;
 function BI(number,base){
   base = base || 10;
 
-  this.n = [1];
-  this.size = 1;
+  this.n = [];
+  this.size = 0;
 
   // The bit size in the last chunk
   this.lB = 0;
@@ -26,6 +26,11 @@ function BI(number,base){
 
     break;
     case 'number':
+      while(number){
+        this.n.push((number & INV_AND_MASK));
+        number >>= CHUNK_SIZE;
+        this.size++;
+      }
 
     break;
     case 'undefined':
@@ -37,12 +42,40 @@ function BI(number,base){
 }
 
 
+BI.prototype.lt = function(num){
+  var tS = this.size;
+  var nS = num.size;
+  if(tS == nS){
+    return this.n[tS - 1] < num.n[nS - 1];
+  }else{
+    return tS < nS;
+  }
+}
 
+BI.prototype.gt = function(num){
+  var tS = this.size;
+  var nS = num.size;
+  if(tS == nS){
+    return this.n[tS - 1] > num.n[nS - 1];
+  }else{
+    return tS > nS;
+  }
+}
+
+BI.prototype.eq = function(num){
+  var tS = this.size;
+  var nS = num.size;
+  if(tS == nS){
+    return this.n.join('') == num.n.join('');
+  }else{
+    return false;
+  }
+}
 
 
 BI.prototype.add = function(num){
   var carry = 0;
-  var ii = (BI.lt(num)? this.size : num.size);
+  var ii = (this.lt(num)? this.size : num.size);
   for(var i = 0;i < ii;i++){
     this.n[i] += (num.n[i] + carry);
     carry = num[i] >> CHUNK_SIZE;
@@ -150,7 +183,7 @@ BI.prototype.AND = function(num){
 BI.prototype.XOR = function(num){
 
   // We only need to OR the smallest number of chunks
-  var ii = (BI.lt(num)? this.size : num.size); 
+  var ii = (this.lt(num)? this.size : num.size); 
 
   for(var i = 0;i < ii;i++){
     this.n[i] ^= num.n[i];
