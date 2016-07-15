@@ -1,7 +1,7 @@
 /*
 *  BI.lshift <- The function used to bit shift left the big integer
-*    @param x - the number of places to shift 
-*    @
+*    @param x {Integer} - the number of places to shift 
+*    @param me {Boolean} - whether or not the shift should happen to the current object or make a new one.
 *
 */
 
