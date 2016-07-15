@@ -16,4 +16,17 @@
 *   - OR
 *   - XOR
 *   - AND
+*
+* -- PRIME
+*   - PROBABLE PRIME
+*   - MILLER-RABIN
+*   - TRUE PRIME
 */
+
+
+
+
+
+function BI(){
+
+}
