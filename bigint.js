@@ -11,6 +11,12 @@
 *   - SQUARE
 *   - MODPOW
 *
+* -- COMPARISON
+*   - COMPARE
+*   - LESS THAN
+*   - GREATER THAN
+*   - EQUALS
+*
 * -- BITWISE
 *   - NOT
 *   - OR
