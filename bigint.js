@@ -13,9 +13,9 @@
 *
 * -- COMPARISON
 *   - COMPARE (done)
-*   - LESS THAN
-*   - GREATER THAN
-*   - EQUALS
+*   - LESS THAN (done)
+*   - GREATER THAN (done)
+*   - EQUALS (done)
 *
 * -- BITWISE
 *   - NOT (done)
