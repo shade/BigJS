@@ -2,18 +2,23 @@ var Benchmark = require('benchmark');
 var suite = new Benchmark.Suite;
 var a,b;
 function gen(){	
-	a = ~~(Math.random() * 10000)
-	b = ~~(Math.random() * 10000)
+	a = [~~(Math.random() * 1),~~(Math.random() * 1),~~(Math.random() * 1),~~(Math.random() * 1),~~(Math.random() * 1),~~(Math.random() * 10000),~~(Math.random() * 10000),~~(Math.random() * 10000),~~(Math.random() * 10000),~~(Math.random() * 10000),~~(Math.random() * 10000),~~(Math.random() * 10000),~~(Math.random() * 10000),~~(Math.random() * 10000),~~(Math.random() * 10000),~~(Math.random() * 10000),~~(Math.random() * 10000),~~(Math.random() * 10000),~~(Math.random() * 10000),~~(Math.random() * 10000),~~(Math.random() * 10000),~~(Math.random() * 10000),~~(Math.random() * 10000),~~(Math.random() * 10000),~~(Math.random() * 10000),~~(Math.random() * 10000),~~(Math.random() * 10000),~~(Math.random() * 10000),~~(Math.random() * 10000),~~(Math.random() * 10000),~~(Math.random() * 10000),~~(Math.random() * 10000),~~(Math.random() * 10000),~~(Math.random() * 10000),~~(Math.random() * 10000),~~(Math.random() * 10000),~~(Math.random() * 10000),~~(Math.random() * 10000),~~(Math.random() * 10000),~~(Math.random() * 10000),~~(Math.random() * 10000),~~(Math.random() * 10000),~~(Math.random() * 10000),~~(Math.random() * 10000),~~(Math.random() * 10000),~~(Math.random() * 10000),~~(Math.random() * 10000),~~(Math.random() * 10000),~~(Math.random() * 10000),~~(Math.random() * 10000),~~(Math.random() * 10000),~~(Math.random() * 10000),~~(Math.random() * 10000),~~(Math.random() * 10000),~~(Math.random() * 10000),~~(Math.random() * 10000),~~(Math.random() * 10000),~~(Math.random() * 10000),~~(Math.random() * 10000),~~(Math.random() * 10000),~~(Math.random() * 10000),~~(Math.random() * 10000),~~(Math.random() * 10000),~~(Math.random() * 10000),~~(Math.random() * 10000),~~(Math.random() * 10000),~~(Math.random() * 10000),~~(Math.random() * 10000),~~(Math.random() * 10000),~~(Math.random() * 10000),~~(Math.random() * 10000),~~(Math.random() * 10000),~~(Math.random() * 10000),~~(Math.random() * 10000),~~(Math.random() * 10000),~~(Math.random() * 10000),~~(Math.random() * 10000),~~(Math.random() * 10000),~~(Math.random() * 10000),~~(Math.random() * 10000)];
+	b = [~~(Math.random() * 1),~~(Math.random() * 1),~~(Math.random() * 1),~~(Math.random() * 1),~~(Math.random() * 1),~~(Math.random() * 10000),~~(Math.random() * 10000),~~(Math.random() * 10000),~~(Math.random() * 10000),~~(Math.random() * 10000),~~(Math.random() * 10000),~~(Math.random() * 10000),~~(Math.random() * 10000),~~(Math.random() * 10000),~~(Math.random() * 10000),~~(Math.random() * 10000),~~(Math.random() * 10000),~~(Math.random() * 10000),~~(Math.random() * 10000),~~(Math.random() * 10000),~~(Math.random() * 10000),~~(Math.random() * 10000),~~(Math.random() * 10000),~~(Math.random() * 10000),~~(Math.random() * 10000),~~(Math.random() * 10000),~~(Math.random() * 10000),~~(Math.random() * 10000),~~(Math.random() * 10000),~~(Math.random() * 10000),~~(Math.random() * 10000),~~(Math.random() * 10000),~~(Math.random() * 10000),~~(Math.random() * 10000),~~(Math.random() * 10000),~~(Math.random() * 10000),~~(Math.random() * 10000),~~(Math.random() * 10000),~~(Math.random() * 10000),~~(Math.random() * 10000),~~(Math.random() * 10000),~~(Math.random() * 10000),~~(Math.random() * 10000),~~(Math.random() * 10000),~~(Math.random() * 10000),~~(Math.random() * 10000),~~(Math.random() * 10000),~~(Math.random() * 10000),~~(Math.random() * 10000),~~(Math.random() * 10000),~~(Math.random() * 10000),~~(Math.random() * 10000),~~(Math.random() * 10000),~~(Math.random() * 10000),~~(Math.random() * 10000),~~(Math.random() * 10000),~~(Math.random() * 10000),~~(Math.random() * 10000),~~(Math.random() * 10000),~~(Math.random() * 10000),~~(Math.random() * 10000),~~(Math.random() * 10000),~~(Math.random() * 10000),~~(Math.random() * 10000),~~(Math.random() * 10000),~~(Math.random() * 10000),~~(Math.random() * 10000),~~(Math.random() * 10000),~~(Math.random() * 10000),~~(Math.random() * 10000),~~(Math.random() * 10000),~~(Math.random() * 10000),~~(Math.random() * 10000),~~(Math.random() * 10000),~~(Math.random() * 10000),~~(Math.random() * 10000),~~(Math.random() * 10000),~~(Math.random() * 10000),~~(Math.random() * 10000),~~(Math.random() * 10000)];
 }
 
 // add tests 
-suite.add('comp', function() {
+suite.add('toString', function() {
 	gen();
-	(a>b?a:b)
+	a.join('') == b.join('');
 })
-.add('min', function() {
+.add('for', function() {
 	gen();
-	Math.min(a,b);
+	for(var i = a.length;i--;){
+		if(a != b){
+			return false;
+		}
+	}
+	return true;
 })
 // add listeners 
 .on('cycle', function(event) {

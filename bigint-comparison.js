@@ -11,11 +11,6 @@ BI.prototype.compare = function(num){
     num = new BI(num);
   }
 
-  // If they're inherently the same
-  if(this.num.toString(2) == num.toString(2)){
-    return 0;
-  }
-
   if(this.size < num.size){
     return -1;
   }
@@ -27,9 +22,34 @@ BI.prototype.compare = function(num){
         return 1;
       }else if(this.n[i] < num.n[i]){
         return -1;
-      }else{
-        return 0;
       }
     }
   }
+  
+  return 0;
+}
+/*
+*  BI.lessThan <- The function used to compare if num this is less than num
+*    @param {BI | Number} num - the number you want to compare with
+*
+*/
+
+BI.prototype.lt = function(num){
+
+  // Make this a BigInteger if it's not
+  if(!(num instanceof BI)){
+    num = new BI(num);
+  }
+
+  var bS = this.size,nS = num.size;
+
+  if(bS != nS){
+    return bS < nS;
+  }
+
+  for(var i = bS;i--;){
+    var lt = 
+  }
+
+  return false;
 }
