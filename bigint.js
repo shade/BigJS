@@ -12,18 +12,18 @@
 *   - MODPOW
 *
 * -- COMPARISON
-*   - COMPARE
+*   - COMPARE (done)
 *   - LESS THAN
 *   - GREATER THAN
 *   - EQUALS
 *
 * -- BITWISE
-*   - NOT
-*   - OR
-*   - XOR
-*   - AND
-*   - LEFT_SHIFT
-*   - RIGHT_SHIFT
+*   - NOT (done)
+*   - OR (done)
+*   - XOR (done)
+*   - AND (done)
+*   - LEFT_SHIFT (done)
+*   - RIGHT_SHIFT (almost done)
 *
 * -- PRIME
 *   - PROBABLE PRIME
