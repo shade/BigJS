@@ -152,7 +152,7 @@ BI.prototype.rshift = function(x, me){
 
   // How many chunks and how many shifts left
   var num = ~~(x / CHUNK_SIZE);
-  var rem = x % CHUNK_SIZE;
+  var rem = x - (CHUNK_SIZE * num);
 
   // Push out as many chunks as possible
   for(var i = num;i--;){
@@ -161,14 +161,11 @@ BI.prototype.rshift = function(x, me){
 
   //Resize
   _bi.size -= num;
-
+  var carry = 0;
   for(var i = this.size;i--;){
-    // This is the last thing
-    if(!i){
-      var carry = _bi.n[i];
-    }
     //Shift it 
-    _bi.n[i] >>=
+    _bi.n[i] >>= (CHUNK_SIZE - rem);
+    _bi.n[i] |= carry;
   }
 
   return _bi;
