@@ -40,16 +40,29 @@ function BI(num,base){
     return this;
   }
 
+  this.n = [];
+  this.lB = 0;
+  
+  var b = "";
+
   switch(typeof num){
     case 'string':
-	    var arr = num.split(''),_b,b = "";
+	    var arr = num.split(''),_b;
     	while((_b = arr.shift())){
 	    	b += parseInt(num,base).toString(2);	
     	}
     break;
     case 'number':
-
+    	b = num.toString(2);
     break;
   }
 
+
+  for(var i = 0,ii = b.length;i < ii;i+=8){
+  	this.n.push(parseInt(b.substr(i,CHUNK_SIZE),2));
+  }
+
+  this.lB = CHUNK_SIZE - this.n[this.n.length - 1].toString(2).length;
+
+  return this;
 }
