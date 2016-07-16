@@ -22,6 +22,8 @@
 *   - OR
 *   - XOR
 *   - AND
+*   - LEFT_SHIFT
+*   - RIGHT_SHIFT
 *
 * -- PRIME
 *   - PROBABLE PRIME
