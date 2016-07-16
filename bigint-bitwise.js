@@ -75,6 +75,14 @@ BI.prototype.rshift = function(x, me){
   //Resize
   _bi.size -= num;
 
-  
+  for(var i = this.size;i--;){
+    // This is the last thing
+    if(!i){
+      var carry = _bi.n[i];
+    }
+    //Shift it 
+    _bi.n[i] >>=
+  }
+
 
 }
