@@ -88,8 +88,9 @@ function BI(num,base){
 BI.prototype.digest = function(){
 
     var digest = "";
-    for(var i = this.size;i--;){
-      digest += PADDING_STRING.substr(n.length)+n;
+    for(var i = this.n.length;i--;){
+      var n = this.n[i];
+      digest += PADDING_STRING.substr(n.length)+n.toString(2);
     }
 
     return digest;
