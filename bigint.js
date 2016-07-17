@@ -2,7 +2,7 @@
 * TYPES OF OPERATIONS WANTED
 *
 * -- ARITHMETIC
-*   - ADD
+*   - ADD (done)
 *   - SUBTRACT
 *   - MULTIPLY
 *   - DIVIDE
@@ -38,6 +38,12 @@ var CHUNK_SIZE = 15;
 var AND_MASK = (Math.pow(2,CHUNK_SIZE) - 1);
 // The inverse is just the opposite of the above mask
 var INV_AND_MASK = AND_MASK << CHUNK_SIZE;
+// Make padding string
+var PADDING_STRING = "";
+
+for(var i = CHUNK_SIZE;i--;){
+  PADDING_STRING += "0";
+}
 
 
 function BI(num,base){
@@ -70,7 +76,21 @@ function BI(num,base){
   	this.n.push(parseInt(b.substr(i,CHUNK_SIZE),2));
   }
 
-  this.lB = CHUNK_SIZE - this.n[this.n.length - 1].toString(2).length;
+  this.lB = this.n[this.n.length - 1].toString(2).length;
 
   return this;
+}
+
+/*
+* BI.digest <- returns a binary string of big integers
+*
+*/
+BI.prototype.digest = function(){
+
+    var digest = "";
+    for(var i = this.size;i--;){
+      digest += PADDING_STRING.substr(n.length)+n;
+    }
+
+    return digest;
 }
