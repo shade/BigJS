@@ -15,7 +15,7 @@ describe('Construction And Digesting', function(){
 		});
 		describe('Multiple Chunks', function(){
 			//This is a big number
-			var num = Math.pow(2,~~(Math.random()*5)+15);
+			var num = Math.pow(2,~~(Math.random()*5)+16) - 1;
 			it('should digest to the same', function(){
 				var a = new BI(num);
 				console.log(a,num);
