@@ -63,17 +63,17 @@ function BI(num,base){
     case 'string':
 	    var arr = num.split(''),_b;
     	while((_b = arr.shift())){
-	    	b += parseInt(num,base).toString(15);	
+	    	b += parseInt(num,base).toString(2);	
     	}
     break;
     case 'number':
-    	b = num.toString(15);
+    	b = num.toString(2);
     break;
   }
 
 
-  for(var i = 0,ii = b.length;i < ii;i++){
-    this.n.push(parseInt(b.substr(i,1).toString(15),15));
+  for(var i = 0;i < b.length / 15;i++){
+    this.n.push(parseInt(b.substr(i * 15, 15),2));
   }
 
   this.lB = this.n[this.n.length - 1].toString(2).length;
