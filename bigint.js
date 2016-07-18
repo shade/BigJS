@@ -63,23 +63,24 @@ function BI(num,base){
     case 'string':
 	    var arr = num.split(''),_b;
     	while((_b = arr.shift())){
-	    	b += parseInt(num,base).toString(2);	
+	    	b += parseInt(num,base).toString(15);	
     	}
     break;
     case 'number':
-    	b = num.toString(2);
+    	b = num.toString(15);
     break;
   }
 
 
-  for(var i = 0,ii = b.length;i < ii;i+=8){
-  	this.n.push(parseInt(b.substr(i,CHUNK_SIZE),2));
+  for(var i = 0,ii = b.length;i < ii;i++){
+    this.n.push(parseInt(b.substr(i,1).toString(15),15));
   }
 
   this.lB = this.n[this.n.length - 1].toString(2).length;
 
   return this;
 }
+
 
 /*
 * BI.digest <- returns a binary string of big integers
@@ -89,8 +90,8 @@ BI.prototype.digest = function(){
 
     var digest = "";
     for(var i = this.n.length;i--;){
-      var n = this.n[i];
-      digest += PADDING_STRING.substr(n.length)+n.toString(2);
+      var n = this.n[i].toString(2);
+      digest += PADDING_STRING.substr(n.length)+n;
     }
 
     return digest;

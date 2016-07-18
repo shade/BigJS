@@ -18,6 +18,7 @@ describe('Construction And Digesting', function(){
 			var num = Math.pow(2,~~(Math.random()*5)+15);
 			it('should digest to the same', function(){
 				var a = new BI(num);
+				console.log(a,num);
 				parseInt(a.digest(),2).should.equal(num);
 			})
 		})
