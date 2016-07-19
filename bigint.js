@@ -63,7 +63,7 @@
 // can be negative.  Negative bigInts are 2s complement.
 // 
 // The following functions do not modify their inputs.
-// Those returning a bigInt, string, or Array will dynamically allocate memory for that value.
+// Those returning a bigInt, string, or Array will dynamically allocate memory for that value.  
 // Those returning a boolean will return the integer 0 (false) or 1 (true).
 // Those returning boolean or int will not allocate memory except possibly on the first 
 // time they're called with a given parameter size.
