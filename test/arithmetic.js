@@ -32,6 +32,7 @@ describe("Arithmetic", function(){
 
 				var b1 = new BI(n1),
 					b2 = new BI(n2);
+					console.log(n1,n2);
 
 				(n1-n2).should.equal(parseInt(b1.subtract(b2).digest(),2));
 			});
@@ -44,8 +45,8 @@ describe("Arithmetic", function(){
 				var b1 = new BI(n1),
 					b2 = new BI(n2);
 
+					console.log(n1,n2);
 				(n1-n2).should.equal(parseInt(b1.subtract(b2).digest(),2));
-
 			});
 		})
 	})
