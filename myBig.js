@@ -1,7 +1,8 @@
 //First, take all the array prototype functions because 
 function BI(){
-	
+
 }
+
 BI.prototype.length = function(){
 	return [].length.apply(this,arguments);
 }
