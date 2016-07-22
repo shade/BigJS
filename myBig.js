@@ -4,5 +4,7 @@ function BI(){
 	return this;
 }
 
+This is the
+BI.prototype.add = function(num){
 
-BI.prototype.
+}
