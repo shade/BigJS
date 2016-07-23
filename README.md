@@ -38,4 +38,4 @@ BI.ZERO == 0
 ```
 
 ### Bitwise
-### Prime
+### Prime (my favourite)

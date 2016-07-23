@@ -1,0 +1,33 @@
+{
+  "name": "bigjs",
+  "version": "0.0.1",
+  "description": "A big integer library for JS, based on Leemon, with focus on prime numbers and cryptography",
+  "main": "bigint.js",
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {},
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/joe-tom/bigjs.git"
+  },
+  "keywords": [
+    "Big",
+    "Int",
+    "BigInt",
+    "JS",
+    "Cryptography",
+    "Prime",
+    "Primegenerator"
+  ],
+  "author": "Joseph Thomas",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/joe-tom/bigjs/issues"
+  },
+  "homepage": "https://github.com/joe-tom/bigjs#readme"
+}
