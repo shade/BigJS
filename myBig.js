@@ -1,5 +1,4 @@
 function BI(number,base){
-
 	//This is where the bigint number will go
 	this.num;
 
@@ -9,6 +8,11 @@ function BI(number,base){
 		break;
 		case 'string':
 			this.num = str2bigInt(number,base,64);
+		break;
+		case 'object':
+			if(number instanceof BI){
+				this.num = number.num;
+			}
 		break;
 	}
 	return this;

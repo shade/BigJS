@@ -26,7 +26,7 @@ this only works by translating whatever is in the big int to a JS number. It's c
 
 ## Constants
 ```javascript
-BI.ONE == 0
+BI.ONE == 1
 BI.ZERO == 0
 ```
 ## Primes
@@ -36,6 +36,7 @@ BI.ZERO == 0
 ```javascript
 BI.prime(2048) //Generates a 2048 bit true prime encapsulated in the BI object
 ```
+## Comparisons
 ## Operations
 ### Arithmetic
 #### add(num, me)
