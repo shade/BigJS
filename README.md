@@ -11,7 +11,9 @@ BI.ONE == 0
 BI.ZERO == 0
 ```
 ## Primes
-#### prime(bits)
+#### prime(bits, probable)
+`bits` - bit size of the prime, anything over 2048bits is rather slow on most machines
+`probable` - determines whether or not this is a true prime or a probable prime
 ```javascript
 BI.prime(2048) //Generates a 2048 bit true prime encapsulated in the BI object
 ```

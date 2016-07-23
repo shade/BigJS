@@ -97,12 +97,12 @@ BI.prototype.multiply = function(num, ne){
 
 /*
 * BI.prime - this function uses Maurer's algorithm to generate a true prime
-*		@param n {Number}  - number of bits in the prime
-*
+*		@param bits {Number}  - number of bits in the prime
+*		@param probable {Boolean} - where this is a probable prime or a true one
 * Note: Since this is a true prime it might take a long time on large bitsizes
 */
-BI.prime = function(n){
+BI.prime = function(bits,probable){
 	var p = new BI(0);
-	p.num = randTruePrime(n);
+	p.num = (probable ? randProbPrime(bits) : randTruePrime(bits));
 	return p;
 }
