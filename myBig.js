@@ -3,6 +3,9 @@ function BI(){
 	this.num = [];
 	return this;
 }
+BI.ONE = new BI(1);
+BI.ZERO = new BI(0);
+
 
 /*
 *	BI.add - this function adds the current big int with another

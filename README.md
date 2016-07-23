@@ -1,8 +1,14 @@
 #BigIntJS
+This is my big integer library, it is built on top of the big int library built by Leemon Baird.
 
+I built it for my own interests in cryptography. It was built as Leemon's library polluted the global scope and had a somewhat scattered design.
 
+## Constants
+```javascript
+BI.ONE == 0
+BI.ZERO == 0
+```
 ## Operations
-
 ### Arithmetic
 #### add(num, me)
 ```javascript
@@ -28,3 +34,6 @@
   b.multiply(7, true);
   // Returns the current big int object, b, with its value changed to 56
 ```
+
+### Bitwise
+### Prime
