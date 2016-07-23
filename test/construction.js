@@ -105,7 +105,7 @@ describe('Construction And Digesting', function(){
 					big.toString(16).toUpperCase().should.equal(number.toString(16).toUpperCase());
 			});
 			it("Should work with Base64 Numbers", function(){
-
+        
 			});
 		});
 	});
