@@ -1,10 +1,28 @@
-function BI(){
+function BI(number,base){
+
 	//This is where the bigint number will go
-	this.num = [];
+	this.num;
+
+	switch(typeof number){
+		case 'number':
+			this.num = int2bigInt(number,64);
+		break;
+		case 'string':
+			this.num = str2bigInt(number,base,64);
+		break;
+	}
 	return this;
 }
 BI.ONE = new BI(1);
 BI.ZERO = new BI(0);
+/*
+*	This function is called whenever the big int is used as an integer
+* e.g. var b = new BI(10)
+*	b * 1 should return 10
+*/
+BI.prototype.valueOf = function(){
+	return parseInt(bigInt2str(this.num,10),10)
+}
 
 
 /*
