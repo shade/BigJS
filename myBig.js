@@ -13,8 +13,13 @@ function BI(number,base){
 	}
 	return this;
 }
+
+
+/* CONSTANTS */
 BI.ONE = new BI(1);
 BI.ZERO = new BI(0);
+
+
 /*
 *	This function is called whenever the big int is used as an integer
 * e.g. var b = new BI(10)
@@ -22,6 +27,15 @@ BI.ZERO = new BI(0);
 */
 BI.prototype.valueOf = function(){
 	return parseInt(bigInt2str(this.num,10),10)
+}
+
+
+/*
+*	BI.toString - returns the true number represented by this bigInt as a string
+*		@param base {Number} - the base you want the number encoded in
+*/
+BI.prototype.toString = function(base){
+	return bigInt2str(this.num,base);
 }
 
 
