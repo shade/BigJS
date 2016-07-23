@@ -185,7 +185,7 @@ var digitsStr = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz_
 //initialize the global variables
 for (bpe = 0;
     (1 << (bpe + 1)) > (1 << bpe); bpe++); //bpe=number of bits in the mantissa on this platform
-var bpe >>= 1; //bpe=number of bits in one element of the array representing the bigInt
+bpe >>= 1; //bpe=number of bits in one element of the array representing the bigInt
 var mask = (1 << bpe) - 1; //AND the mask with an integer to get its bpe least significant bits
 var radix = mask + 1; //2^bpe.  a single 1 bit to the left of the first bit of mask
 var one = int2bigInt(1, 1, 1); //constant used in powMod_()
