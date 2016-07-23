@@ -4,12 +4,15 @@ This is my big integer library, it is built on top of the big int library built 
 I built it for my own interests in cryptography. It was built as Leemon's library polluted the global scope and had a somewhat scattered design. I especially love the implementations that were done for finding primes. Enjoy!
 ## Construction
 #### BI(number, base)
-`number` - the actual number, this can be a string or a JS number  
+`number` - the actual number, this can be a string, a JS number, or another BI object
 `base` - this defaults to 10
 ```javascript
   var b = new BI(16772625);
   //Or
   var b = new BI("FFEE11", 16);
+  //If you put a BI object in the constructor a deep copy of that number is made
+  var foo = new BI(b);
+  //foo is now a BI object with the value 0xFFEE11
 ```
 #### .toString(base)
 `base` - this also defaults to 10

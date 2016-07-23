@@ -11,7 +11,7 @@ function BI(number,base){
 		break;
 		case 'object':
 			if(number instanceof BI){
-				this.num = number.num;
+				this.num = number.num.slice(0);
 			}
 		break;
 	}
