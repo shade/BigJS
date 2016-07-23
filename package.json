@@ -1,6 +1,6 @@
 {
   "name": "bigjs",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "A big integer library for JS, based on Leemon, with focus on prime numbers and cryptography",
   "main": "bigint.js",
   "directories": {
