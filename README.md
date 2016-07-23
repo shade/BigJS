@@ -15,7 +15,6 @@ BI.ZERO == 0
 ```javascript
 BI.prime(2048) //Generates a 2048 bit true prime encapsulated in the BI object
 ```
-
 ## Operations
 ### Arithmetic
 #### add(num, me)
