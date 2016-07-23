@@ -10,6 +10,12 @@ I built it for my own interests in cryptography. It was built as Leemon's librar
 BI.ONE == 0
 BI.ZERO == 0
 ```
+## Primes
+#### prime(bits)
+```javascript
+BI.prime(2048) //Generates a 2048 bit true prime
+```
+
 ## Operations
 ### Arithmetic
 #### add(num, me)
@@ -38,4 +44,3 @@ BI.ZERO == 0
 ```
 
 ### Bitwise
-### Prime (my favourite)
