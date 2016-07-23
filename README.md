@@ -3,7 +3,26 @@ This is my big integer library, it is built on top of the big int library built 
 
 I built it for my own interests in cryptography. It was built as Leemon's library polluted the global scope and had a somewhat scattered design. I especially love the implementations that were done for finding primes. Enjoy!
 ## Construction
-
+#### BI(number, base)
+`number` - the actual number, this can be a string or a JS number
+`base` - this defaults to 10
+```javascript
+  var b = new BI(16772625);
+  //Or
+  var b = new BI("FFEE11", 16);
+```
+#### .toString(base)
+`base` - this also defaults to 10
+```javascript
+  var b = new BI(16772625).toString(16);
+  //b is now the string "FFEE11"
+```
+#### .valueOf()
+this only works by translating whatever is in the big int to a JS number. It's called whenever the object is involved in a numerical operation.
+```javascript
+  var b = (new BI(10)) * 2
+  //b is now 20
+```
 
 ## Constants
 ```javascript
