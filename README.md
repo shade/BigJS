@@ -13,7 +13,7 @@ BI.ZERO == 0
 ## Primes
 #### prime(bits, probable)
 `bits` - bit size of the prime, anything over 2048bits is rather slow on most machines  
-`probable` - determines whether or not this is a true prime or a probable prime  
+`probable` - determines whether or not this is a true prime or a probable prime. Setting this to true means that 1 in every 2^80 numbers generated may be composite. However, it has a speed up of about 10x compared to the true prime.
 ```javascript
 BI.prime(2048) //Generates a 2048 bit true prime encapsulated in the BI object
 ```
