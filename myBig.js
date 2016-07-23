@@ -85,7 +85,7 @@ BI.prototype.subtract = function(num, me){
 * 	@param num {Number | BI} - the number you want to multiply with
 *		@oaram me {Boolean}
 */
-BI.prototype.multiply = function(num, ne){
+BI.prototype.times = BI.prototype.multiply = function(num, me){
 	var _this = (me ? this : new BI(this));
 
 	if(num instanceof BI){

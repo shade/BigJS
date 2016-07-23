@@ -66,5 +66,7 @@ BI.prime(2048) //Generates a 2048 bit true prime encapsulated in the BI object
   b.multiply(7, true);
   // Returns the current big int object, b, with its value changed to 56
 ```
+#### times(num, me)
+this is a synonym of .multiply()
 
 ### Bitwise
