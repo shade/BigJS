@@ -1,4 +1,4 @@
-#BigIntJS
+#BigJS
 This is my big integer library, it is built on top of the big int library built by Leemon Baird.
 
 I built it for my own interests in cryptography. It was built as Leemon's library polluted the global scope and had a somewhat scattered design. I especially love the implementations that were done for finding primes. Enjoy!
