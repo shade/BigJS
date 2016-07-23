@@ -110,3 +110,6 @@ BI.prime = function(bits,probable){
 	p.num = (probable ? randProbPrime(bits) : randTruePrime(bits));
 	return p;
 }
+
+//For npm
+module&&module.exports = BI;

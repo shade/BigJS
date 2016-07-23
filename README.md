@@ -7,6 +7,10 @@ I built it for my own interests in cryptography. It was built as Leemon's librar
 `number` - the actual number, this can be a string, a JS number, or another BI object
 `base` - this defaults to 10
 ```javascript
+  // If you're using npm, otherwise BI is part of the window objects
+  var BI = require('bigjs');
+
+
   var b = new BI(16772625);
   //Or
   var b = new BI("FFEE11", 16);
