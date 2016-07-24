@@ -112,4 +112,4 @@ BI.prime = function(bits,probable){
 }
 
 //For npm
-module&&module.exports = BI;
+module&&(module.exports = BI);
