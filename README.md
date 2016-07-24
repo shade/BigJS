@@ -37,7 +37,7 @@ BI.ONE == 1
 BI.ZERO == 0
 ```
 ## Primes
-#### prime(bits, probable)
+#### BI.prime(bits, probable)
 `bits` - bit size of the prime, anything over 2048bits is rather slow on most machines  
 `probable` - determines whether or not this is a true prime or a probable prime. Setting this to true means that 1 in every 2^80 numbers generated may be composite. However, it has a speed up of about 10x compared to the true prime.
 ```javascript
@@ -46,7 +46,7 @@ BI.prime(2048) //Generates a 2048 bit true prime encapsulated in the BI object
 ## Comparisons
 ## Operations
 ### Arithmetic
-#### add(num, me)
+#### .add(num, me)
 ```javascript
   var b = new BI(1997);
   b.add(19);
@@ -54,7 +54,7 @@ BI.prime(2048) //Generates a 2048 bit true prime encapsulated in the BI object
   b.add(19, true);
   // Returns the current big int object, b, with its value changed to 2016
 ```
-#### subtract(num, me)
+#### .subtract(num, me)
 ```javascript
   var b = new BI(2016);
   b.subtract(19);
@@ -62,7 +62,7 @@ BI.prime(2048) //Generates a 2048 bit true prime encapsulated in the BI object
   b.subtract(19, true);
   // Returns the current big int object, b, with its value changed to 1997
 ```
-#### multiply(num, me)
+#### .multiply(num, me)
 ```javascript
   var b = new BI(8);
   b.multiply(7);
@@ -70,7 +70,7 @@ BI.prime(2048) //Generates a 2048 bit true prime encapsulated in the BI object
   b.multiply(7, true);
   // Returns the current big int object, b, with its value changed to 56
 ```
-#### times(num, me)
+#### .times(num, me)
 this is a synonym of .multiply()
 
 ### Bitwise
