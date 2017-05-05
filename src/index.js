@@ -4,7 +4,7 @@
 // TypedArrays aren't used as there is no current performance imperative to do so.
 // 
 // Utility
-//  - toString(numbase)         {String} -> returns a string in the specified base supports Base 2,10,16,36,64
+//  - toString(num, base)    {String} -> returns a string in the specified base supports Base 2,10,16,36,64
 //  - fromString(num, base)  {BigInt} -> creates a bigInt from a string and its base, support is same as toString
 // 
 // Basic Arithmetic
@@ -18,4 +18,4 @@
 // Advanced Arithmetic
 //  - modpow(x,y,z)   {BigInt} -> computes (x ** y) % z
 
-const MAX_INTEGER = 2 ** 32
+const MAX_INTEGER = (2 ** 32) - 1
