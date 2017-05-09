@@ -1,13 +1,4 @@
 const BYTE_MASKS = [
-  0b0
-  0b1
-  0b11
-  0b111
-  0b1111
-  0b11111
-  0b111111
-  0b1111111
-  0b11111111
 ]
 
 
@@ -64,7 +55,7 @@ Util.fromString = (num, base) => {
 Util.toString = (num, base) => {
   var ChunkSize = Math.log2(base)
   var ChunkMask = BYTE_MASKS[ChunkSize]
-  var NumChunks = 32 / ChunkSize
+  var NumChunks = BYTE_SIZE / ChunkSize
 
   var str = ""
 
@@ -79,5 +70,8 @@ Util.toString = (num, base) => {
     }
   }
 }
+
+
+
 
 module.exports = Util

@@ -17,5 +17,13 @@
 //  
 // Advanced Arithmetic
 //  - modpow(x,y,z)   {BigInt} -> computes (x ** y) % z
+//  
+// Logical Operators
+// - not(x)           {BigInt} -> checks if !x
+// - eq(x,y)          {BigInt} -> checks if x == y
+// - gt(x,y)          {BigInt} -> checks if x > y
+// - lt(x,y)          {BigInt} -> checks if x < y
+// 
 
-const MAX_INTEGER = (2 ** 32) - 1
+const BYTE_SIZE = 32
+const BASE = (2 ** BYTE_SIZE) - 1
